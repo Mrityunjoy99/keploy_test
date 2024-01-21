@@ -1,0 +1,67 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-9
+spec:
+    metadata: {}
+    req:
+        method: GET
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/hello?name=Mrityunjoy
+        url_params:
+            name: Mrityunjoy
+        header:
+            Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+            Accept-Encoding: gzip, deflate, br
+            Accept-Language: en-GB,en-US;q=0.9,en;q=0.8
+            Connection: keep-alive
+            Cookie: hubspotutk=ab7c5655cde9310de565cd48f120ed3e; __hssrc=1; messagesUtk=1111ea1e93f347a7b983b57424a68294; __hstc=181257784.ab7c5655cde9310de565cd48f120ed3e.1705644994035.1705647964383.1705653324267.3
+            Host: localhost:8080
+            Sec-Ch-Ua: '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"'
+            Sec-Ch-Ua-Mobile: ?0
+            Sec-Ch-Ua-Platform: '"macOS"'
+            Sec-Fetch-Dest: document
+            Sec-Fetch-Mode: navigate
+            Sec-Fetch-Site: none
+            Sec-Fetch-User: ?1
+            Upgrade-Insecure-Requests: "1"
+            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+        body: ""
+        body_type: ""
+        timestamp: 2024-01-21T15:25:12.475429347Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "30"
+            Content-Type: application/json; charset=utf-8
+            Date: Sun, 21 Jan 2024 15:25:12 GMT
+        body: '{"message":"Hello Mrityunjoy"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-01-21T15:25:12.477175144Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1705850712
+curl: |
+    curl --request GET \
+      --url http://localhost:8080/hello?name=Mrityunjoy \
+      --header 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \
+      --header 'Sec-Fetch-Dest: document' \
+      --header 'Sec-Ch-Ua: "Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"' \
+      --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+      --header 'Cookie: hubspotutk=ab7c5655cde9310de565cd48f120ed3e; __hssrc=1; messagesUtk=1111ea1e93f347a7b983b57424a68294; __hstc=181257784.ab7c5655cde9310de565cd48f120ed3e.1705644994035.1705647964383.1705653324267.3' \
+      --header 'Sec-Fetch-Site: none' \
+      --header 'Connection: keep-alive' \
+      --header 'Upgrade-Insecure-Requests: 1' \
+      --header 'Sec-Fetch-User: ?1' \
+      --header 'Sec-Fetch-Mode: navigate' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Sec-Ch-Ua-Platform: "macOS"' \
+      --header 'Host: localhost:8080' \

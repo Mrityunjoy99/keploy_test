@@ -1,0 +1,60 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-2
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/user
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Connection: keep-alive
+            Content-Length: "94"
+            Content-Type: application/json
+            Host: localhost:8080
+            Postman-Token: d2e2f0e3-ae79-46da-b3ac-5ee95110aeb3
+            User-Agent: PostmanRuntime/7.29.2
+        body: |-
+            {
+                "first_name":"Mrityunjoy1",
+                "last_name":"Dey",
+                "email":"mrityunjoy1@gmail.com"
+            }
+        body_type: ""
+        timestamp: 2024-01-21T15:24:36.686128891Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "122"
+            Content-Type: application/json; charset=utf-8
+            Date: Sun, 21 Jan 2024 15:24:36 GMT
+        body: '{"id":"89303026-8d0d-428f-a076-39de4594fe4c","first_name":"Mrityunjoy1","last_name":"Dey","email":"mrityunjoy1@gmail.com"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-01-21T15:24:36.708444395Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1705850678
+curl: |-
+    curl --request POST \
+      --url http://localhost:8080/user \
+      --header 'Postman-Token: d2e2f0e3-ae79-46da-b3ac-5ee95110aeb3' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Connection: keep-alive' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: PostmanRuntime/7.29.2' \
+      --header 'Accept: */*' \
+      --data '{
+        "first_name":"Mrityunjoy1",
+        "last_name":"Dey",
+        "email":"mrityunjoy1@gmail.com"
+    }'

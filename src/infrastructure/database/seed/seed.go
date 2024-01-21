@@ -1,0 +1,4 @@
+package seed
+
+func SeedDB() {
+}

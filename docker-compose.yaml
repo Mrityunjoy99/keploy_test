@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  sample_project_app:
+    image: sample_project:local
+    container_name: sample_project_app
+    restart: always
+    env_file:
+      - ./.env.docker
+    networks:
+      - keploy-network
+    command: >
+      ./sample_project start
+
+      
+    ports:
+      - 8080:8080
+networks:
+  keploy-network:
+    driver: bridge

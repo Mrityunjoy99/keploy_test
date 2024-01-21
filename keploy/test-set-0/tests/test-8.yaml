@@ -1,0 +1,60 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-8
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/user
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Connection: keep-alive
+            Content-Length: "95"
+            Content-Type: application/json
+            Host: localhost:8080
+            Postman-Token: 7552e2cb-547b-40fa-bbb7-e4b17c552e40
+            User-Agent: PostmanRuntime/7.29.2
+        body: |-
+            {
+                "first_name":"Mrityunjoy1",
+                "last_name":"Dey1",
+                "email":"mrityunjoy1@gmail.com"
+            }
+        body_type: ""
+        timestamp: 2024-01-21T15:24:59.213122748Z
+        host: ""
+    resp:
+        status_code: 500
+        header:
+            Content-Length: "104"
+            Content-Type: application/json; charset=utf-8
+            Date: Sun, 21 Jan 2024 15:24:59 GMT
+        body: '{"message":"ERROR: duplicate key value violates unique constraint \"users_email_key\" (SQLSTATE 23505)"}'
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-01-21T15:24:59.238805241Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1705850701
+curl: |-
+    curl --request POST \
+      --url http://localhost:8080/user \
+      --header 'Accept: */*' \
+      --header 'Postman-Token: 7552e2cb-547b-40fa-bbb7-e4b17c552e40' \
+      --header 'Host: localhost:8080' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Connection: keep-alive' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: PostmanRuntime/7.29.2' \
+      --data '{
+        "first_name":"Mrityunjoy1",
+        "last_name":"Dey1",
+        "email":"mrityunjoy1@gmail.com"
+    }'
